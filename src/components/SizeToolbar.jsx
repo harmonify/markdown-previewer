@@ -1,10 +1,14 @@
+/* eslint-disable */
 import { BsArrowsFullscreen, BsArrowsAngleContract } from 'react-icons/bs';
 
-export function SizeToolbar({className}) {
+export function SizeToolbar(props) {
   return (
-    <>
-      <BsArrowsAngleContract className={className} />
-      <BsArrowsFullscreen className={className} />
-    </>
+    <button onClick={props.onClick}>
+      {
+        props.isMaximized
+          ? <BsArrowsAngleContract className={props.className} />
+          : <BsArrowsFullscreen className={props.className} />
+      }
+    </button>
   )
 }

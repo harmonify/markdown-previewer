@@ -1,16 +1,13 @@
 import { GiMusicalNotes } from 'react-icons/gi';
-import { SizeToolbar } from './SizeToolbar';
 
-export function CardHeader(props) {
+export function CardHeader({children, className, text}) {
   return (
-    <div className="card-header">
+    <div className={"card-header " + className}>
       <div>
         <GiMusicalNotes className="card-header-icon" />
-        <span className="card-header-text">{props.text}</span>
+        <span className="card-header-text">{text}</span>
       </div>
-      <div>
-        <SizeToolbar className="card-header-icon" />
-      </div>
+      {children}
     </div>
   )
 }

@@ -1,10 +1,11 @@
 import { Card, CardHeader, CardBody } from "./Card";
+import { SizeToolbar } from "./SizeToolbar";
 import { useContext } from "react";
-import { Context } from '../Store';
+import { GlobalContext } from '../Store';
 import ACTIONS from "../config/ACTIONS";
 
 export function EditorCard() {
-  const [state, dispatch] = useContext(Context);
+  const [state, dispatch] = useContext(GlobalContext);
 
   function handleChange(e) {
     dispatch({
@@ -14,12 +15,31 @@ export function EditorCard() {
       },
     });
   }
+  
+  function handleEditorMaximize() {
+    dispatch({
+      type: ACTIONS.TOGGLE_MAXIMIZE_EDITOR
+    })
+  }
 
   return (
-    <Card>
-      <CardHeader text="Editor" />
+    <Card className={state.previewerIsMaximized ? 'hidden' : ''}>
+      <CardHeader text="Editor">
+      <div>
+        <SizeToolbar
+          className="card-header-icon"
+          isMaximized={state.editorIsMaximized}
+          onClick={handleEditorMaximize}
+        />
+      </div>
+      </CardHeader>
       <CardBody>
-        <textarea className="editor" name="editor" id="editor" value={state.markdown} onChange={handleChange} />
+        <textarea
+          className={state.editorIsMaximized ? 'editor min-h-screen' : 'editor h-80'}
+          id="editor"
+          value={state.markdown}
+          onChange={handleChange}
+        />
       </CardBody>
     </Card>
   )

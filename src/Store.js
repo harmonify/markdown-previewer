@@ -5,15 +5,17 @@ import { reducer } from "./reducer";
 
 const initialState = {
   markdown: PLACEHOLDER,
+  editorIsMaximized: false,
+  previewerIsMaximized: false,
 };
-export const Context = createContext(initialState);
+export const GlobalContext = createContext(initialState);
 
 const Store = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <Context.Provider value={[state, dispatch]}>
+    <GlobalContext.Provider value={[state, dispatch]}>
       {props.children}
-    </Context.Provider>
+    </GlobalContext.Provider>
   );
 };
 export default Store;
