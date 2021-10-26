@@ -26,6 +26,8 @@
     "react/react-in-jsx-scope": "off",
 
     // allow jsx syntax in js files (should add ".ts" if also use typescript)
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
+    "react/prop-types": "off"
   }
 }
