@@ -1,16 +1,23 @@
+import { GiMusicalNotes } from 'react-icons/gi';
+import { SizeToolbar } from './SizeToolbar';
+
 export function CardHeader(props) {
   return (
-    <div className="bg-gray-900 px-2 py-2">
-      <span className="bg-gradient-to-r text-transparent from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-l font-bold">
-        {props.text}
-      </span>
+    <div className="card-header">
+      <div>
+        <GiMusicalNotes className="card-header-icon" />
+        <span className="card-header-text">{props.text}</span>
+      </div>
+      <div>
+        <SizeToolbar className="card-header-icon" />
+      </div>
     </div>
   )
 }
 
 export function CardBody({children, className}) {
   return (
-    <div className={"break-words " + className}>
+    <div className={"card-body " + className}>
       {children}
     </div>
   )
@@ -18,7 +25,7 @@ export function CardBody({children, className}) {
 
 export function Card({children, className}) {
   return (
-    <div className={"relative flex flex-col rounded border border-gray-300 " + className}>
+    <div className={"card " + className}>
       {children}
     </div>
   )

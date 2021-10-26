@@ -22,6 +22,28 @@
   .app {
     @apply flex flex-col justify-center items-center bg-gradient-to-b from-gray-900 via-gray-900 to-black min-h-screen gap-4 space-y-5 py-6;
   }
-}
 
-@tailwind screens;
+  .card {
+    @apply relative flex flex-col rounded border border-gray-300 shadow-md;
+  }
+
+  .card-header {
+    @apply bg-gray-900 px-1 py-2 flex justify-between;
+  }
+
+  .card-header-text {
+    @apply bg-gradient-to-r text-transparent from-purple-600 to-indigo-500 bg-clip-text text-lg font-bold;
+  }
+
+  .card-header-icon {
+    @apply inline text-purple-600 mx-1;
+  }
+
+  .card-body {
+    @apply break-words px-1;
+  }
+
+  .editor {
+    @apply resize-y w-full h-80 bg-black text-gray-300 focus:outline-none;
+  }
+}
