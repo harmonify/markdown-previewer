@@ -1,13 +1,26 @@
-/* eslint-disable no-unused-vars */
 import { Card, CardHeader, CardBody } from "./Card";
+import { useContext } from "react";
+import { Context } from '../Store';
+import ACTIONS from "../config/ACTIONS";
 
 export function EditorCard() {
+  const [state, dispatch] = useContext(Context);
+
+  function handleChange(e) {
+    dispatch({
+      type: ACTIONS.UPDATE_MARKDOWN,
+      payload: {
+        markdown: e.target.value,
+      },
+    });
+  }
+
   return (
     <Card>
       <CardHeader text="Editor" />
-        <textarea className="resize-y w-full h-full bg-black text-gray-300" name="editor" id="editor" rows="10">
-          
-        </textarea>
+      <CardBody>
+        <textarea className="editor" name="editor" id="editor" value={state.markdown} onChange={handleChange} />
+      </CardBody>
     </Card>
   )
 }
