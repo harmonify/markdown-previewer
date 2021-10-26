@@ -15,7 +15,7 @@ export function EditorCard() {
       },
     });
   }
-  
+
   function handleEditorMaximize() {
     dispatch({
       type: ACTIONS.TOGGLE_MAXIMIZE_EDITOR
@@ -27,7 +27,7 @@ export function EditorCard() {
       <CardHeader text="Editor">
       <div>
         <SizeToolbar
-          className="card-header-icon"
+          className="icon"
           isMaximized={state.editorIsMaximized}
           onClick={handleEditorMaximize}
         />
@@ -35,7 +35,7 @@ export function EditorCard() {
       </CardHeader>
       <CardBody>
         <textarea
-          className={state.editorIsMaximized ? 'editor min-h-screen' : 'editor h-80'}
+          className={state.editorIsMaximized ? 'editor min-h-screen resize-none' : 'editor h-80'}
           id="editor"
           value={state.markdown}
           onChange={handleChange}

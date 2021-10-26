@@ -11,42 +11,75 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
 }
 
-@layer components {
-  .app {
-    @apply flex flex-col justify-center items-center bg-gradient-to-b from-gray-900 via-gray-900 to-black min-h-screen gap-4 space-y-5 py-6;
+@layer utilities {
+  .flex-centered {
+    @apply flex flex-col justify-center items-center;
   }
 
+  .text-purple-gradient {
+    @apply inline-block bg-gradient-to-r text-transparent from-purple-600 to-indigo-500 bg-clip-text;
+  }
+}
+
+@layer components {
+  /*
+   * Styles for App
+   */
+  .app {
+    @apply flex-centered bg-gradient-to-b from-gray-900 to-black min-h-screen gap-4 space-y-5 py-6;
+  }
+
+  .app-header {
+    @apply flex-centered space-y-5;
+  }
+
+  .btn-link {
+    @apply inline-flex justify-center items-center font-normal text-center px-3 py-1 leading-normal text-base rounded cursor-pointer bg-gray-200  hover:bg-purple-700;
+  }
+
+  .icon {
+    @apply inline text-purple-600 mx-1;
+  }
+
+
+  /*
+   * Styles for Card
+   */
   .card {
-    @apply relative flex flex-col rounded border border-gray-600 shadow-md;
+    @apply relative flex flex-col rounded border border-gray-600 shadow-lg;
   }
 
   .card-header {
-    @apply bg-gray-900 px-1 py-2 flex justify-between;
+    @apply bg-gray-900 px-1 py-2 flex justify-between border-b border-black shadow-lg;
   }
 
   .card-header-text {
-    @apply bg-gradient-to-r text-transparent from-purple-600 to-indigo-500 bg-clip-text text-lg font-bold;
-  }
-
-  .card-header-icon {
-    @apply inline text-purple-600 mx-1;
+    @apply text-purple-gradient text-lg font-bold;
   }
 
   .card-body {
     @apply break-words;
   }
+  
 
+  /*
+   * Styles for EditorCard
+   */
   .editor {
-    @apply resize-y w-full h-80 font-mono bg-gray-900 text-gray-300 focus:outline-none;
+    @apply w-full font-mono bg-gray-900 text-gray-300 focus:outline-none;
   }
 
+
+  /*
+   * Styles for PreviewerCard
+   */
   .markdown-body ul > li {
     @apply list-disc list-outside;
   }

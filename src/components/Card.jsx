@@ -4,7 +4,7 @@ export function CardHeader({children, className, text}) {
   return (
     <div className={"card-header " + className}>
       <div>
-        <GiMusicalNotes className="card-header-icon" />
+        <GiMusicalNotes className="icon" />
         <span className="card-header-text">{text}</span>
       </div>
       {children}

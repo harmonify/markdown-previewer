@@ -6,6 +6,10 @@ import marked from "marked";
 import 'github-markdown-css/github-markdown-light.css';
 import ACTIONS from "../config/ACTIONS";
 
+marked.setOptions({
+  breaks: true
+})
+
 export function PreviewerCard() {
   const [state, dispatch] = useContext(GlobalContext);
 
@@ -20,14 +24,18 @@ export function PreviewerCard() {
       <CardHeader text="Previewer">
         <div>
           <SizeToolbar
-            className="card-header-icon"
+            className="icon"
             isMaximized={state.previewerIsMaximized}
             onClick={handlePreviewerMaximize}
           />
         </div>
       </CardHeader>
       <CardBody>
-        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: marked(state.markdown) }} />
+        <div
+          className="markdown-body bg-gray-100"
+          id="preview"
+          dangerouslySetInnerHTML={{ __html: marked(state.markdown) }}
+        />
       </CardBody>
     </Card>
   )
