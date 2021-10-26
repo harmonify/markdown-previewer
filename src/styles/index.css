@@ -24,7 +24,7 @@
   }
 
   .card {
-    @apply relative flex flex-col rounded border border-gray-300 shadow-md;
+    @apply relative flex flex-col rounded border border-gray-600 shadow-md;
   }
 
   .card-header {
@@ -40,10 +40,18 @@
   }
 
   .card-body {
-    @apply break-words px-1;
+    @apply break-words;
   }
 
   .editor {
-    @apply resize-y w-full h-80 bg-black text-gray-300 focus:outline-none;
+    @apply resize-y w-full h-80 font-mono bg-gray-900 text-gray-300 focus:outline-none;
+  }
+
+  .markdown-body ul > li {
+    @apply list-disc list-outside;
+  }
+
+  .markdown-body ol > li {
+    @apply list-decimal list-outside;
   }
 }

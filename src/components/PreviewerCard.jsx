@@ -1,6 +1,8 @@
 import { Card, CardHeader, CardBody } from "./Card";
 import { useContext } from "react";
 import { Context } from "../Store";
+import marked from "marked";
+import 'github-markdown-css/github-markdown-light.css';
 
 export function PreviewerCard() {
   const [state] = useContext(Context);
@@ -8,8 +10,8 @@ export function PreviewerCard() {
   return (
     <Card>
       <CardHeader text="Previewer" />
-      <CardBody className="bg-gray-200">
-        <input type="text" value={state.markdown} />
+      <CardBody>
+        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: marked(state.markdown) }} />
       </CardBody>
     </Card>
   )
