@@ -1,10 +1,27 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Markdown Previewer
+
+</div>
+<p align="center">
+<a href="https://harmonify-mp.netlify.app" target="_blank"><img src="https://raw.githubusercontent.com/harmonify/markdown-previewer/main/.github/img/screenshot.png" width="600"></a>
+</p>
+
+This is a markdown previewer I built using React and Tailwind for FreeCodeCamp's Front End Development Libraries Project. This project is hosted on [Netlify](https://harmonify-mp.netlify.app).
+
+## Dependencies
+
+What I used to build up this project.
+
+1. [React v17.0.2](https://reactjs.org/)
+2. [Tailwind v2.2](https://tailwindcss.com/)
+3. [marked](https://github.com/markedjs/marked)
+4. [github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
+5. [react-icons](https://github.com/react-icons/react-icons)
 
 ## Available Scripts
 
-In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). In the project directory, you can run:
 
 ### `npm start`
 
