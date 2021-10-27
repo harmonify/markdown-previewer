@@ -24,7 +24,6 @@ export function PreviewerCard() {
       <CardHeader text="Previewer">
         <div>
           <SizeToolbar
-            className="icon"
             isMaximized={state.previewerIsMaximized}
             onClick={handlePreviewerMaximize}
           />

@@ -27,7 +27,6 @@ export function EditorCard() {
       <CardHeader text="Editor">
       <div>
         <SizeToolbar
-          className="icon"
           isMaximized={state.editorIsMaximized}
           onClick={handleEditorMaximize}
         />

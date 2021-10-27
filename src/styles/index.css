@@ -41,13 +41,12 @@
   }
 
   .btn-link {
-    @apply inline-flex justify-center items-center font-normal text-center px-3 py-1 leading-normal text-base rounded cursor-pointer bg-gray-200  hover:bg-purple-700;
+    @apply inline-flex justify-center items-center font-normal text-center px-3 py-1 leading-normal text-base rounded cursor-pointer bg-gray-200 transition duration-500 ease-in-out hover:bg-purple-700 transform hover:translate-y-1 hover:scale-110;
   }
 
   .icon {
     @apply inline text-purple-600 mx-1;
   }
-
 
   /*
    * Styles for Card
